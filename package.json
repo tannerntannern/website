@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "My personal website.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tannerntannern@bitbucket.org/tannerntannern/portfolio-website.git"
+  },
+  "author": "Tanner Nielsen",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/tannerntannern/portfolio-website#readme",
+  "devDependencies": {
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
