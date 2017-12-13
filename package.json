@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "My personal website.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile-pug": "pug --out dist --pretty src/pug",
+    "compile-sass": "node-sass --output dist/css/ src/sass/",
+    "compile-ts": "rollup -c",
+    "watch-pug": "npm run compile-pug -- -w",
+    "watch-sass": "npm run compile-sass -- -r",
+    "watch-ts": "npm run compile-ts -- -w",
+    "watch": "npm-run-all --parallel watch-pug watch-sass watch-ts",
+    "build": "npm-run-all compile-pug compile-sass compile-ts"
   },
   "repository": {
     "type": "git",
@@ -13,7 +20,12 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/tannerntannern/portfolio-website#readme",
   "devDependencies": {
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
     "pug": "^2.0.0-rc.4",
-    "pug-cli": "^1.0.0-alpha6"
+    "pug-cli": "^1.0.0-alpha6",
+    "rollup": "^0.52.1",
+    "rollup-plugin-typescript": "^0.8.1",
+    "typescript": "^2.6.2"
   }
 }

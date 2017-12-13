@@ -1,7 +1,10 @@
-var c = document.querySelector('canvas').getContext('2d');
+import { Point } from './classes';
+import { Quadtree } from './quadtree';
+
+let c = document.querySelector('canvas').getContext('2d');
 
 // Global vars
-var ptDist = 70,
+let ptDist = 70,
 	numPoints = 650,
 	w = c.canvas.width,
 	h = c.canvas.height,
@@ -9,7 +12,7 @@ var ptDist = 70,
 	bigH = h + (2 * ptDist);
 
 // Init colors
-var colors = {
+let colors = {
 	background1: '#1e1e3c',
 	background2: '#1c3f4a',
 	points: '#ffe699',
@@ -17,8 +20,9 @@ var colors = {
 };
 
 // Init Points
-var points = [], spd = 0.5, spd2 = spd / 2;
-for (var i = 0; i < numPoints; i ++){
+Point.init(w, h, ptDist);
+let points = [], spd = 0.5, spd2 = spd / 2;
+for (let i = 0; i < numPoints; i ++){
 	points[i] = new Point(
 		Math.random() * bigW,
 		Math.random() * bigH,
@@ -28,18 +32,18 @@ for (var i = 0; i < numPoints; i ++){
 }
 
 // Init quadtree
-var tree = new Quadtree({x: 0, y: 0, width: w, height: h}, 4, 30);
+let tree = new Quadtree({x: 0, y: 0, width: w, height: h}, 4, 30);
 
 function update() {
 	// Update point locations
-	for (i = 0; i < points.length; i ++) {
-		points[i].update(w, ptDist, h, ptDist);
+	for (let pt of points) {
+		pt.update(w, ptDist, h, ptDist);
 	}
 
 	// Update quadtree
 	tree.clear();
-	for (i = 0; i < points.length; i ++) {
-		tree.insert(points[i]);
+	for (let pt of points) {
+		tree.insert(pt);
 	}
 }
 
@@ -53,22 +57,19 @@ function render() {
 
 	// Render points
 	c.fillStyle = colors.points;
-	for (i = 0; i < points.length; i ++){
-		var pt = points[i];
+	for (let pt of points){
 		c.fillRect(pt.x, pt.y, 2, 2);
 	}
 
 	// Render point connectors
 	c.strokeStyle = colors.connectors;
-	for (i = 0; i < points.length; i ++){
-		pt = points[i];
-		var	dist2 = ptDist * 2,
+	for (let pt of points){
+		let	dist2 = ptDist * 2,
 			distSqr = Math.pow(ptDist, 2),
 			near = tree.retrieve({x: pt.x - ptDist, y: pt.y - ptDist, width: dist2, height: dist2});
 
-		for (var j = 0; j < near.length; j ++){
-			var pt2 = near[j],
-				pt2DistSqr = Math.pow(pt.x - pt2.x, 2) + Math.pow(pt.y - pt2.y, 2)
+		for (let pt2 of near){
+			let pt2DistSqr = Math.pow(pt.x - pt2.x, 2) + Math.pow(pt.y - pt2.y, 2)
 
 			if (pt2DistSqr < distSqr){
 				c.globalAlpha = 1 - Math.sqrt(pt2DistSqr / distSqr);
