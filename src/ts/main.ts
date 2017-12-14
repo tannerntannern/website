@@ -4,8 +4,8 @@ import { Quadtree } from './quadtree';
 let c = document.querySelector('canvas').getContext('2d');
 
 // Global vars
-let ptDist = 70,
-	numPoints = 650,
+let ptDist = 80,
+	numPoints = 500,
 	w = c.canvas.width,
 	h = c.canvas.height,
 	bigW = w + (2 * ptDist),

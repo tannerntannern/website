@@ -202,8 +202,8 @@ var Quadtree = /** @class */ (function () {
 
 var c = document.querySelector('canvas').getContext('2d');
 // Global vars
-var ptDist = 70;
-var numPoints = 650;
+var ptDist = 80;
+var numPoints = 500;
 var w = c.canvas.width;
 var h = c.canvas.height;
 var bigW = w + (2 * ptDist);

@@ -4,13 +4,33 @@
     <title>Canvas Test</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <canvas id="canvas" width="1000" height="500"></canvas>
+    <div class="page-height" id="landing-demo">
+      <canvas id="canvas" width="1000" height="500"></canvas>
+    </div>
+    <div id="learn-more">
+      <nav class="pushpin-nav pinned" data-target="learn-more">
+        <div class="nav-wrapper background-primary">
+          <div class="container"><a class="brand-logo" href="/">Here is a Thing</a></div>
+        </div>
+      </nav>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      $('.pushpin-nav').each(function () {
+      	var $this = $(this);
+      	var $target = $('#' + $(this).attr('data-target'));
+      	$this.pushpin({
+      		top: $target.offset().top,
+      		bottom: $target.offset().top + $target.outerHeight() - $this.height()
+      	});
+      });
+    </script>
   </body>
 </html>

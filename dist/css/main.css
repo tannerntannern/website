@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+  background-color: #2e2e2e;
+  color: #fff6f2; }
+
+.page-height {
+  height: 100%; }
+
+.background-primary {
+  background-color: #2e2e2e; }
+
+.text-primary {
+  color: #fff6f2; }

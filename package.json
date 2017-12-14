@@ -7,7 +7,7 @@
     "compile-sass": "node-sass --output dist/css/ src/sass/",
     "compile-ts": "rollup -c",
     "watch-pug": "npm run compile-pug -- -w",
-    "watch-sass": "npm run compile-sass -- -r",
+    "watch-sass": "npm run compile-sass -- -w -r",
     "watch-ts": "npm run compile-ts -- -w",
     "watch": "npm-run-all --parallel watch-pug watch-sass watch-ts",
     "build": "npm-run-all compile-pug compile-sass compile-ts"
