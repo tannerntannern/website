@@ -9,7 +9,8 @@
     "watch-pug": "npm run compile-pug -- -w",
     "watch-sass": "npm run compile-sass -- -w -r",
     "watch-ts": "npm run compile-ts -- -w",
-    "watch": "npm-run-all --parallel watch-pug watch-sass watch-ts",
+    "serve": "http-server ./dist --silent",
+    "dev": "npm-run-all --parallel watch-pug watch-sass watch-ts serve",
     "build": "npm-run-all compile-pug compile-sass compile-ts"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/tannerntannern/portfolio-website#readme",
   "devDependencies": {
+    "http-server": "^0.10.0",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
     "pug": "^2.0.0-rc.4",
