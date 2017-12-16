@@ -3,6 +3,9 @@ extends ../templates/page
 block title
 	title Canvas Test
 
+block content
+	canvas(id="canvas" width="1920" height="500")
+
 block scripts
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.2/pixi.min.js")
 	script(src="js/main.js")

@@ -22,9 +22,6 @@ export class Point {
 		Point.BIG_H = Point.EDGE_Y + Point.DIST;
 	}
 
-	public width: number = 1;
-	public height: number = 1;
-
 	constructor(public x: number,
 				public y: number,
 				public xSpeed: number,
@@ -45,47 +42,10 @@ export class Point {
 }
 
 /**
- * Manages colors internally in hex format, but exposes an interface to edit them as strings, as to take advantage IDE
- * color assistance.
+ * Represents a point on a canvas for the landing page.
  */
-export class ColorManager {
-	/**
-	 * Where all colors are stored.
-	 */
-	private colors: {[name:string]: number} = {};
-
-	/**
-	 * Constructs a new ColorManager.
-	 */
-	constructor(colors: {[name:string]: string}) {
-		this.set(colors);
-	}
-
-	/**
-	 * Sets the given color to the given value.
-	 */
-	public set(name: string, value: string);
-	/**
-	 * Sets the given colors to the given values.
-	 */
-	public set(colors: {[name:string]: string});
-	public set(p1: string|{[name:string]: string}, p2?: string) {
-		// Normalize arguments
-		let colors = {};
-		if (typeof p1 === 'string') colors[p1] = p2;
-		else colors = p1;
-
-		// Assign colors
-		for(let name in colors){
-			this.colors[name] = parseInt(colors[name].replace('#', '0x'), 16);
-		}
-	}
-
-	/**
-	 * Returns the numeric value of the particular color.
-	 */
-	public get(name: string, string?: boolean) {
-		let color = this.colors[name];
-		return string ? '#' + color.toString(16) : color;
+export class Line {
+	constructor(public p1: Point, public p2: Point){
+		// ...
 	}
 }
