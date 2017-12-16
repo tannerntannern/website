@@ -1,4 +1,6 @@
 import { Point, Line } from './classes';
+import { MainLoop } from './mainloop';
+declare var PIXI: any;
 
 let c = document.querySelector('canvas').getContext('2d');
 
@@ -7,6 +9,8 @@ let ptDist = 120,
 	numPoints = 600,
 	w = c.canvas.width,
 	h = c.canvas.height,
+	edgeX = w + ptDist,
+	edgeY = h + ptDist,
 	bigW = w + (2 * ptDist),
 	bigH = h + (2 * ptDist);
 
@@ -19,7 +23,6 @@ let colors = {
 };
 
 // Init Points
-Point.init(w, h, ptDist);
 let points = [], spd = 0.5, spd2 = spd / 2;
 for (let i = 0; i < numPoints; i ++){
 	points[i] = new Point(
@@ -38,16 +41,8 @@ for (let i = 0; i < numPoints; i ++) {
 	}
 }
 
-function update() {
-	// Update point locations
-	for (let pt of points) {
-		pt.update(w, ptDist, h, ptDist);
-	}
-}
-
 // Pre-calculate values to cut down on render time
-let distSqr = Math.pow(ptDist, 2),
-	grd = c.createLinearGradient(0, 0, w, h);
+let grd = c.createLinearGradient(0, 0, w, h);
 grd.addColorStop(0, colors.background1);
 grd.addColorStop(1, colors.background2);
 
@@ -58,7 +53,27 @@ function distanceApprox(p1, p2){
 	return 1.426776695*Math.min(0.7071067812*(Math.abs(x)+Math.abs(y)), Math.max (Math.abs(x), Math.abs(y)));
 }
 
-function render() {
+// Update function
+function update(delta){
+
+}
+
+// Render function
+function render(timestamp) {
+	// Normalize delta
+	timestamp /= 1000;
+
+	// Update point locations
+	for (let pt of points) {
+		pt.x += timestamp * pt.xSpeed;
+		pt.y += timestamp * pt.ySpeed;
+
+		if (pt.x < -ptDist) pt.x += bigW;
+		if (pt.x > edgeX) pt.x -= bigW;
+		if (pt.y < -ptDist) pt.y += bigH;
+		if (pt.y > edgeY) pt.y -= bigH;
+	}
+
 	// Background
 	c.fillStyle = grd;
 	c.fillRect(-1, -1, w + 2, h + 2);
@@ -84,9 +99,7 @@ function render() {
 		}
 	}
 	c.globalAlpha = 1;
-}
 
-setInterval(function(){
-	update();
-	render();
-}, 30);
+	// Request next animation frame
+	requestAnimationFrame(render);
+}
