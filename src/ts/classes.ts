@@ -32,13 +32,60 @@ export class Point {
 		// ...
 	}
 
-	update() {
-		this.x +=this.xSpeed;
-		this.y +=this.ySpeed;
+	update(delta) {
+		delta /= 1000;
+		this.x += delta * this.xSpeed;
+		this.y += delta * this.ySpeed;
 
 		if (this.x < -Point.DIST) this.x += Point.BIG_W;
 		if (this.x > Point.EDGE_X) this.x -= Point.BIG_W;
 		if (this.y < -Point.DIST) this.y += Point.BIG_H;
 		if (this.y > Point.EDGE_Y) this.y -= Point.BIG_H;
+	}
+}
+
+/**
+ * Manages colors internally in hex format, but exposes an interface to edit them as strings, as to take advantage IDE
+ * color assistance.
+ */
+export class ColorManager {
+	/**
+	 * Where all colors are stored.
+	 */
+	private colors: {[name:string]: number} = {};
+
+	/**
+	 * Constructs a new ColorManager.
+	 */
+	constructor(colors: {[name:string]: string}) {
+		this.set(colors);
+	}
+
+	/**
+	 * Sets the given color to the given value.
+	 */
+	public set(name: string, value: string);
+	/**
+	 * Sets the given colors to the given values.
+	 */
+	public set(colors: {[name:string]: string});
+	public set(p1: string|{[name:string]: string}, p2?: string) {
+		// Normalize arguments
+		let colors = {};
+		if (typeof p1 === 'string') colors[p1] = p2;
+		else colors = p1;
+
+		// Assign colors
+		for(let name in colors){
+			this.colors[name] = parseInt(colors[name].replace('#', '0x'), 16);
+		}
+	}
+
+	/**
+	 * Returns the numeric value of the particular color.
+	 */
+	public get(name: string, string?: boolean) {
+		let color = this.colors[name];
+		return string ? '#' + color.toString(16) : color;
 	}
 }
