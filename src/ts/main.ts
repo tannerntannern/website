@@ -6,7 +6,7 @@ let c = document.querySelector('canvas').getContext('2d');
 
 // Global vars
 let ptDist = 120,
-	numPoints = 600,
+	numPoints = 610,
 	w = c.canvas.width,
 	h = c.canvas.height,
 	edgeX = w + ptDist,
@@ -55,25 +55,23 @@ function distanceApprox(p1, p2){
 
 // Update function
 function update(delta){
-
-}
-
-// Render function
-function render(timestamp) {
 	// Normalize delta
-	timestamp /= 1000;
+	delta /= 20;
 
 	// Update point locations
 	for (let pt of points) {
-		pt.x += timestamp * pt.xSpeed;
-		pt.y += timestamp * pt.ySpeed;
+		pt.x += delta * pt.xSpeed;
+		pt.y += delta * pt.ySpeed;
 
 		if (pt.x < -ptDist) pt.x += bigW;
 		if (pt.x > edgeX) pt.x -= bigW;
 		if (pt.y < -ptDist) pt.y += bigH;
 		if (pt.y > edgeY) pt.y -= bigH;
 	}
+}
 
+// Render function
+function render() {
 	// Background
 	c.fillStyle = grd;
 	c.fillRect(-1, -1, w + 2, h + 2);
@@ -99,7 +97,10 @@ function render(timestamp) {
 		}
 	}
 	c.globalAlpha = 1;
-
-	// Request next animation frame
-	requestAnimationFrame(render);
 }
+
+MainLoop
+	.setMaxAllowedFPS(80)
+	.setUpdate(update)
+	.setDraw(render)
+	.start();
