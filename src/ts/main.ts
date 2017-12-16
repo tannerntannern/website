@@ -32,26 +32,26 @@ for (let i = 0; i < numPoints; i ++){
 }
 
 // Init quadtree
-let tree = new Quadtree({x: 0, y: 0, width: w, height: h}, 4, 30);
+let tree = new Quadtree({x: 0, y: 0, width: w, height: h}, 8, 16);
 
 function update() {
-	// Update point locations
-	for (let pt of points) {
-		pt.update(w, ptDist, h, ptDist);
-	}
-
-	// Update quadtree
+	// Update point locations and quadtree
 	tree.clear();
 	for (let pt of points) {
+		pt.update(w, ptDist, h, ptDist);
 		tree.insert(pt);
 	}
 }
 
+// Pre-calculate values to cut down on render time
+let dist2 = ptDist * 2,
+	distSqr = Math.pow(ptDist, 2),
+	grd = c.createLinearGradient(0, 0, w, h);
+grd.addColorStop(0, colors.background1);
+grd.addColorStop(1, colors.background2);
+
 function render() {
 	// Background
-	var grd = c.createLinearGradient(0, 0, w, h);
-	grd.addColorStop(0, colors.background1);
-	grd.addColorStop(1, colors.background2);
 	c.fillStyle = grd;
 	c.fillRect(-1, -1, w + 2, h + 2);
 
@@ -64,9 +64,7 @@ function render() {
 	// Render point connectors
 	c.strokeStyle = colors.connectors;
 	for (let pt of points){
-		let	dist2 = ptDist * 2,
-			distSqr = Math.pow(ptDist, 2),
-			near = tree.retrieve({x: pt.x - ptDist, y: pt.y - ptDist, width: dist2, height: dist2});
+		let	near = tree.retrieve({x: pt.x - ptDist, y: pt.y - ptDist, width: dist2, height: dist2});
 
 		for (let pt2 of near){
 			let pt2DistSqr = Math.pow(pt.x - pt2.x, 2) + Math.pow(pt.y - pt2.y, 2)

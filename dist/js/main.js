@@ -224,38 +224,37 @@ for (var i = 0; i < numPoints; i++) {
     points[i] = new Point(Math.random() * bigW, Math.random() * bigH, (Math.random() * spd - spd2) + spd, Math.random() * spd - spd2);
 }
 // Init quadtree
-var tree = new Quadtree({ x: 0, y: 0, width: w, height: h }, 4, 30);
+var tree = new Quadtree({ x: 0, y: 0, width: w, height: h }, 8, 16);
 function update() {
-    // Update point locations
+    // Update point locations and quadtree
+    tree.clear();
     for (var _i = 0, points_1 = points; _i < points_1.length; _i++) {
         var pt = points_1[_i];
         pt.update(w, ptDist, h, ptDist);
-    }
-    // Update quadtree
-    tree.clear();
-    for (var _a = 0, points_2 = points; _a < points_2.length; _a++) {
-        var pt = points_2[_a];
         tree.insert(pt);
     }
 }
+// Pre-calculate values to cut down on render time
+var dist2 = ptDist * 2;
+var distSqr = Math.pow(ptDist, 2);
+var grd = c.createLinearGradient(0, 0, w, h);
+grd.addColorStop(0, colors.background1);
+grd.addColorStop(1, colors.background2);
 function render() {
     // Background
-    var grd = c.createLinearGradient(0, 0, w, h);
-    grd.addColorStop(0, colors.background1);
-    grd.addColorStop(1, colors.background2);
     c.fillStyle = grd;
     c.fillRect(-1, -1, w + 2, h + 2);
     // Render points
     c.fillStyle = colors.points;
-    for (var _i = 0, points_3 = points; _i < points_3.length; _i++) {
-        var pt = points_3[_i];
+    for (var _i = 0, points_2 = points; _i < points_2.length; _i++) {
+        var pt = points_2[_i];
         c.fillRect(pt.x, pt.y, 2, 2);
     }
     // Render point connectors
     c.strokeStyle = colors.connectors;
-    for (var _a = 0, points_4 = points; _a < points_4.length; _a++) {
-        var pt = points_4[_a];
-        var dist2 = ptDist * 2, distSqr = Math.pow(ptDist, 2), near = tree.retrieve({ x: pt.x - ptDist, y: pt.y - ptDist, width: dist2, height: dist2 });
+    for (var _a = 0, points_3 = points; _a < points_3.length; _a++) {
+        var pt = points_3[_a];
+        var near = tree.retrieve({ x: pt.x - ptDist, y: pt.y - ptDist, width: dist2, height: dist2 });
         for (var _b = 0, near_1 = near; _b < near_1.length; _b++) {
             var pt2 = near_1[_b];
             var pt2DistSqr = Math.pow(pt.x - pt2.x, 2) + Math.pow(pt.y - pt2.y, 2);
