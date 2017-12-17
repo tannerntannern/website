@@ -9,7 +9,7 @@
     "watch-pug": "npm run compile-pug -- -w",
     "watch-sass": "npm run compile-sass -- -w -r",
     "watch-ts": "npm run compile-ts -- -w",
-    "serve": "http-server ./dist --silent",
+    "serve": "http-server ./dist --silent -c-1",
     "dev": "npm-run-all --parallel watch-pug watch-sass watch-ts serve",
     "build": "npm-run-all compile-pug compile-sass compile-ts"
   },
