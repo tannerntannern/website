@@ -4,8 +4,13 @@ block title
 	title Canvas Test
 
 block content
-	canvas(id="canvas" width="1920" height="500")
+	#landing-demo
+		canvas(id="canvas" width="1000" height="500")
+		#landing-demo-center
+			h2 Hi, I'm #[span.text-accent Tanner Nielsen]
+			h5 I'm a full-stack web developer.
+	#main
+
 
 block scripts
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.2/pixi.min.js")
 	script(src="js/main.js")

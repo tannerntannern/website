@@ -7,14 +7,19 @@ html, body {
   color: $text-primary;
 }
 
-.page-height {
-  height: 100%;
-}
-
 .background-primary {
   background-color: $color-primary;
 }
 
 .text-primary {
   color: $text-primary;
+}
+
+.text-accent {
+  color: $color-accent;
+}
+
+#landing-demo {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
