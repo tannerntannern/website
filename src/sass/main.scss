@@ -2,13 +2,43 @@
 
 html, body {
   height: 100%;
-
-  background-color: $color-primary;
   color: $text-primary;
+  font-family: 'Palanquin', sans-serif;
+}
+
+
+#landing-demo {
+  width: 100%;
+  height: 100%;
+
+  #canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  #landing-demo-center {
+    z-index: 100;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+}
+
+main {
+  background-color: $color-primary;
 }
 
 .background-primary {
   background-color: $color-primary;
+}
+
+.background-accent {
+  background-color: $color-accent;
+  color: $text-secondary !important;
 }
 
 .text-primary {
@@ -16,10 +46,6 @@ html, body {
 }
 
 .text-accent {
+  font-weight: bold;
   color: $color-accent;
-}
-
-#landing-demo {
-  overflow-x: hidden;
-  overflow-y: hidden;
 }

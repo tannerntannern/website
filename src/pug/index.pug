@@ -5,12 +5,18 @@ block title
 
 block content
 	#landing-demo
-		canvas(id="canvas" width="1000" height="500")
+		canvas#canvas
 		#landing-demo-center
-			h2 Hi, I'm #[span.text-accent Tanner Nielsen]
+			h2(style="margin-top: 0;") Hi, I'm #[span.text-accent Tanner Nielsen]
 			h5 I'm a full-stack web developer.
-	#main
-
+	main
+		include ../snippets/navbar
+		.container
+			h1#test Here are some other important things about me.
+			h1 Here are some other important things about me.
+			h1 Here are some other important things about me.
+			h1 Here are some other important things about me.
+			h1 Here are some other important things about me.
 
 block scripts
 	script(src="js/main.js")

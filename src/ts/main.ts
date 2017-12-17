@@ -3,20 +3,26 @@ import { MainLoop } from './mainloop';
 import { debounce } from './util';
 declare var $: any, jQuery: any;
 
+// Initialize canvas demo
 function setup() {
+	// Stop the MainLoop if it was already running
+	MainLoop.stop();
+
 	// Grab canvas context
 	let c = document.querySelector('canvas').getContext('2d');
 
+	// Get width and height
+	let w = document.body.clientWidth,
+		h = window.innerHeight;
+
 	// Set width and height
-	c.canvas.width = window.innerWidth;
-	c.canvas.height = window.innerHeight;
+	c.canvas.width = w;
+	c.canvas.height = h;
 
 	// Global vars
-	let ptDist = 120,
-		pixelsPerPoint = 1500,
+	let ptDist = 125,
+		pixelsPerPoint = 1400,
 		numPointsMax = 1000,
-		w = c.canvas.width,
-		h = c.canvas.height,
 		numPoints = Math.min(Math.round((w * h) / pixelsPerPoint), numPointsMax),
 		edgeX = w + ptDist,
 		edgeY = h + ptDist,
@@ -116,9 +122,7 @@ function setup() {
 		.start();
 }
 
+// Setup once at the beginning
 setup();
 
-$(window).on('resize', debounce(function(){
-	MainLoop.stop();
-	setup();
-}, 200));
+$(window).on('resize', debounce(setup, 200));
