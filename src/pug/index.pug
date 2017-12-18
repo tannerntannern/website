@@ -1,22 +1,27 @@
 extends ../templates/page
 
 block title
-	title Canvas Test
+	title Tanner Nielsen - Full-Stack Web Developer
 
 block content
 	#landing-demo
 		canvas#canvas
 		#landing-demo-center
-			h2(style="margin-top: 0;") Hi, I'm #[span.text-accent Tanner Nielsen]
+			h2 Hi, I'm #[span.text-accent Tanner Nielsen].
 			h5 I'm a full-stack web developer.
-	main
+	#main.block-primary
 		include ../snippets/navbar
 		.container
-			h1#test Here are some other important things about me.
-			h1 Here are some other important things about me.
-			h1 Here are some other important things about me.
-			h1 Here are some other important things about me.
-			h1 Here are some other important things about me.
+			.row
+				.col.s12(style="height: 1000px;")
 
-block scripts
+append scripts
 	script(src="js/main.js")
+	script.
+		$(document).ready(function(){
+			let container = $('#main'), nav = $('#navbar');
+			nav.pushpin({
+				top: nav.offset().top,
+				bottom: container.offset().top + container.outerHeight() - nav.height()
+			});
+		});

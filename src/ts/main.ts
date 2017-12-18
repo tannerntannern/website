@@ -1,6 +1,6 @@
 import { Point, Line } from './classes';
 import { MainLoop } from './mainloop';
-import { debounce } from './util';
+import { debounce, distApprox } from './util';
 declare var $: any, jQuery: any;
 
 // Initialize canvas demo
@@ -61,13 +61,6 @@ function setup() {
 	grd.addColorStop(0, colors.background1);
 	grd.addColorStop(1, colors.background2);
 
-	// https://gist.github.com/aurbano/4693462
-	function distanceApprox(p1, p2){
-		let x = p2.x-p1.x,
-			y = p2.y-p1.y;
-		return 1.426776695*Math.min(0.7071067812*(Math.abs(x)+Math.abs(y)), Math.max (Math.abs(x), Math.abs(y)));
-	}
-
 	// Update function
 	function update(delta){
 		// Normalize delta
@@ -101,7 +94,7 @@ function setup() {
 		c.strokeStyle = colors.connectors;
 		for (let ln of lines){
 			let p1 = ln.p1, p2 = ln.p2,
-				lineLengthApprox = distanceApprox(p1, p2);
+				lineLengthApprox = distApprox(p1, p2);
 
 			if (lineLengthApprox < ptDist){
 				c.globalAlpha = 1 - (lineLengthApprox / ptDist);

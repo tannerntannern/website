@@ -1,11 +1,11 @@
 @import 'variables';
+@import 'margin-fix';
 
 html, body {
   height: 100%;
   color: $text-primary;
   font-family: 'Palanquin', sans-serif;
 }
-
 
 #landing-demo {
   width: 100%;
@@ -28,24 +28,42 @@ html, body {
   }
 }
 
-main {
-  background-color: $color-primary;
-}
-
 .background-primary {
   background-color: $color-primary;
 }
 
+.background-secondary {
+  background: $color-secondary;
+}
+
 .background-accent {
   background-color: $color-accent;
-  color: $text-secondary !important;
 }
 
 .text-primary {
   color: $text-primary;
 }
 
+.text-secondary {
+  color: $text-secondary;
+}
+
 .text-accent {
   font-weight: bold;
-  color: $color-accent;
+  color: $color-accent !important;
+}
+
+.block-primary {
+  @extend .background-primary;
+  @extend .text-primary;
+}
+
+.block-secondary {
+  @extend .background-secondary;
+  @extend .text-secondary;
+}
+
+.block-accent {
+  @extend .background-accent;
+  color: $text-secondary;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Canvas Test</title>
+    <title>Tanner Nielsen - Full-Stack Web Developer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Materialize-->
@@ -11,29 +11,39 @@
     <link href="https://fonts.googleapis.com/css?family=Palanquin:200" rel="stylesheet">
     <!-- Main CSS-->
     <link rel="stylesheet" href="css/main.css">
+    <!-- Custom CSS-->
   </head>
   <body>
     <div id="landing-demo">
       <canvas id="canvas"></canvas>
       <div id="landing-demo-center">
-        <h2 style="margin-top: 0;">Hi, I'm <span class="text-accent">Tanner Nielsen</span></h2>
+        <h2>Hi, I'm <span class="text-accent">Tanner Nielsen</span>.</h2>
         <h5>I'm a full-stack web developer.</h5>
       </div>
     </div>
-    <main>
-      <nav>
-        <div class="nav-wrapper"><a class="brand-logo center">TN</a></div>
+    <div class="block-primary" id="main">
+      <nav class="block-primary" id="navbar">
+        <div class="nav-wrapper"><a class="brand-logo center text-accent">TN</a></div>
       </nav>
       <div class="container">
-        <h1 id="test">Here are some other important things about me.</h1>
-        <h1>Here are some other important things about me.</h1>
-        <h1>Here are some other important things about me.</h1>
-        <h1>Here are some other important things about me.</h1>
-        <h1>Here are some other important things about me.</h1>
+        <div class="row">
+          <div class="col s12" style="height: 1000px;"></div>
+        </div>
       </div>
-    </main>
+    </div>
+    <!-- Materialize scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Custom scripts-->
     <script src="js/main.js"></script>
+    <script>
+      $(document).ready(function(){
+      	let container = $('#main'), nav = $('#navbar');
+      	nav.pushpin({
+      		top: nav.offset().top,
+      		bottom: container.offset().top + container.outerHeight() - nav.height()
+      	});
+      });
+    </script>
   </body>
 </html>
