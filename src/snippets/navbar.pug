@@ -1,12 +1,10 @@
-// TODO: figure out how to assign .active classes to current page link
-
 nav#navbar.block-primary
 	.nav-wrapper.container
 		a.button-collapse(href="#!" data-activates="side-nav")
 			i.material-icons menu
 		ul.left.hide-on-med-and-down
 			each item in navbar
-				li(class= item.text==='Home' ? 'active' : ''): a(href=item.href) #{item.text}
+				li(data-section=item.href): a(href=item.href) #{item.text}
 		ul#side-nav.side-nav
 			each item in navbar
-				li(class= item.text==='Home' ? 'active' : ''): a(href=item.href) #{item.text}
+				li(data-section=item.href): a(href=item.href) #{item.text}

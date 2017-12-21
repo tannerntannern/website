@@ -28,26 +28,37 @@
       </div>
     </div>
     <div class="block-primary" id="main">
-      <!-- TODO: figure out how to assign .active classes to current page link-->
       <nav class="block-primary" id="navbar">
         <div class="nav-wrapper container"><a class="button-collapse" href="#!" data-activates="side-nav"><i class="material-icons">menu</i></a>
           <ul class="left hide-on-med-and-down">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/projects">My work</a></li>
-            <li><a href="/about">About me</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li data-section="#landing-demo"><a href="#landing-demo">Home</a></li>
+            <li data-section="#about-me"><a href="#about-me">About me</a></li>
+            <li data-section="#my-work"><a href="#my-work">My work</a></li>
+            <li data-section="#contact"><a href="#contact">Contact</a></li>
           </ul>
           <ul class="side-nav" id="side-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/projects">My work</a></li>
-            <li><a href="/about">About me</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li data-section="#landing-demo"><a href="#landing-demo">Home</a></li>
+            <li data-section="#about-me"><a href="#about-me">About me</a></li>
+            <li data-section="#my-work"><a href="#my-work">My work</a></li>
+            <li data-section="#contact"><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
       <div class="container">
-        <div class="row">
-          <div class="col s12" style="height: 1000px;">I am available for hire: false</div>
+        <div class="section scrollspy" id="about-me">
+          <div class="row">
+            <div class="col s12" style="height: 600px;">Whoah there, howdy partner.  My name is Deputy Danner.</div>
+          </div>
+        </div>
+        <div class="section scrollspy" id="my-work">
+          <div class="row">
+            <div class="col s12" style="height: 600px;">Whoah there, howdy partner.  My name is Deputy Danner.</div>
+          </div>
+        </div>
+        <div class="section scrollspy" id="contact">
+          <div class="row">
+            <div class="col s12" style="height: 600px;">Whoah there, howdy partner.  My name is Deputy Danner.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -60,10 +71,18 @@
     <script src="js/main.js"></script>
     <script>
       $(document).ready(function(){
+      	// Init pushpin navbar
       	let container = $('#main'), nav = $('#navbar');
       	nav.pushpin({
       		top: nav.offset().top,
       		bottom: container.offset().top + container.outerHeight() - nav.height()
+      	});
+      
+      	// Init scrollspy
+      	$('.scrollspy').scrollSpy({
+      		getActiveElement: function(id){
+      			return 'nav ul li[data-section="#' + id + '"]';
+      		}
       	});
       });
     </script>

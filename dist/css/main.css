@@ -14,6 +14,7 @@ nav ul li.active {
     border-bottom: 2px solid #ffc300; }
 
 .side-nav {
+  z-index: 100 !important;
   background-color: #2e2e2e !important; }
   .side-nav li a {
     color: #fff6f2 !important; }

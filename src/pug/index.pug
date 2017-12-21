@@ -16,17 +16,34 @@ block content
 	#main.block-primary
 		include ../snippets/navbar
 		.container
-			.row
-				.col.s12(style="height: 1000px;")
-					| I am available for hire: #{availableForHire}
+			#about-me.section.scrollspy
+				.row
+					.col.s12(style="height: 600px;")
+						| Whoah there, howdy partner.  My name is Deputy Danner.
+			#my-work.section.scrollspy
+				.row
+					.col.s12(style="height: 600px;")
+						| Whoah there, howdy partner.  My name is Deputy Danner.
+			#contact.section.scrollspy
+				.row
+					.col.s12(style="height: 600px;")
+						| Whoah there, howdy partner.  My name is Deputy Danner.
 
 append scripts
 	script(src="js/main.js")
 	script.
 		$(document).ready(function(){
+			// Init pushpin navbar
 			let container = $('#main'), nav = $('#navbar');
 			nav.pushpin({
 				top: nav.offset().top,
 				bottom: container.offset().top + container.outerHeight() - nav.height()
+			});
+
+			// Init scrollspy
+			$('.scrollspy').scrollSpy({
+				getActiveElement: function(id){
+					return 'nav ul li[data-section="#' + id + '"]';
+				}
 			});
 		});

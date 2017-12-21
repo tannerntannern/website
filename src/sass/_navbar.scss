@@ -16,6 +16,7 @@ nav ul li {
 }
 
 .side-nav {
+  z-index: 100 !important;
   background-color: $color-primary !important;
 
   li a {

@@ -1,9 +1,9 @@
 module.exports = {
   navbar: [
-    {text: "Home", href: "/", active: ""},
-    {text: "My work", href: "/projects", active: ""},
-    {text: "About me", href: "/about", active: ""},
-    {text: "Contact", href: "/contact", active: ""}
+    {text: "Home", href: "#landing-demo"},
+    {text: "About me", href: "#about-me"},
+    {text: "My work", href: "#my-work"},
+    {text: "Contact", href: "#contact"}
   ],
   availableForHire: false,
   skills: {
