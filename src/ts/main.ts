@@ -21,7 +21,7 @@ function setup() {
 
 	// Global vars
 	let ptDist = 125,
-		pixelsPerPoint = 1400,
+		pixelsPerPoint = 1500,
 		numPointsMax = 1000,
 		numPoints = Math.min(Math.round((w * h) / pixelsPerPoint), numPointsMax),
 		edgeX = w + ptDist,

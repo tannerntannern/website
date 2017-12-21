@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My personal website.",
   "scripts": {
-    "compile-pug": "pug --out dist --pretty src/pug",
+    "compile-pug": "pug --out dist --pretty src/pug -O src/data.js",
     "compile-sass": "node-sass --output dist/css/ src/sass/",
     "compile-ts": "rollup -c",
     "watch-pug": "npm run compile-pug -- -w",

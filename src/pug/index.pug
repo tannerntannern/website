@@ -7,13 +7,18 @@ block content
 	#landing-demo
 		canvas#canvas
 		#landing-demo-center
-			h2 Hi, I'm #[span.text-accent Tanner Nielsen].
-			h5 I'm a full-stack web developer.
+			.hide-on-small-only
+				h1 Hi, I'm #[span.text-accent Tanner Nielsen].
+				h4 I'm a full-stack web developer.
+			.hide-on-med-and-up
+				h3 Hi, I'm #[span.text-accent Tanner Nielsen].
+				h5 I'm a full-stack web developer.
 	#main.block-primary
 		include ../snippets/navbar
 		.container
 			.row
 				.col.s12(style="height: 1000px;")
+					| I am available for hire: #{availableForHire}
 
 append scripts
 	script(src="js/main.js")

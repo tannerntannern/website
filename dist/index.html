@@ -17,17 +17,39 @@
     <div id="landing-demo">
       <canvas id="canvas"></canvas>
       <div id="landing-demo-center">
-        <h2>Hi, I'm <span class="text-accent">Tanner Nielsen</span>.</h2>
-        <h5>I'm a full-stack web developer.</h5>
+        <div class="hide-on-small-only">
+          <h1>Hi, I'm <span class="text-accent">Tanner Nielsen</span>.</h1>
+          <h4>I'm a full-stack web developer.</h4>
+        </div>
+        <div class="hide-on-med-and-up">
+          <h3>Hi, I'm <span class="text-accent">Tanner Nielsen</span>.</h3>
+          <h5>I'm a full-stack web developer.</h5>
+        </div>
       </div>
     </div>
     <div class="block-primary" id="main">
       <nav class="block-primary" id="navbar">
-        <div class="nav-wrapper"><a class="brand-logo center text-accent">TN</a></div>
+        <div class="nav-wrapper container"><a class="button-collapse" href="#!" data-activates="side-nav"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">My work</a></li>
+            <li><a href="/about">About me</a></li>
+            <li><a href="/about">About me</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+          <ul class="side-nav" id="side-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">My work</a></li>
+            <li><a href="/about">About me</a></li>
+            <li><a href="/about">About me</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
       </nav>
+      <script>$(".button-collapse").sideNav();</script>
       <div class="container">
         <div class="row">
-          <div class="col s12" style="height: 1000px;"></div>
+          <div class="col s12" style="height: 1000px;">I am available for hire: false</div>
         </div>
       </div>
     </div>
@@ -35,6 +57,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <!-- Custom scripts-->
+    <script>$(".button-collapse").sideNav();</script>
     <script src="js/main.js"></script>
     <script>
       $(document).ready(function(){
