@@ -35,6 +35,12 @@ nav ul li.active {
     left: 50%;
     transform: translate(-50%, -50%); }
 
+#scroll-down {
+  margin-top: 50px;
+  background: transparent !important; }
+  #scroll-down i {
+    font-size: 2em; }
+
 html, body {
   height: 100%;
   color: #fff6f2;
