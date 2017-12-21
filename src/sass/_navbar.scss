@@ -10,6 +10,7 @@ nav ul li {
 
     a {
       color: $color-accent !important;
+      border-bottom: 2px solid $color-accent;
     }
   }
 }

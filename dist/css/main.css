@@ -10,7 +10,8 @@ nav ul li:hover {
 nav ul li.active {
   background-color: #484848 !important; }
   nav ul li.active a {
-    color: #ffc300 !important; }
+    color: #ffc300 !important;
+    border-bottom: 2px solid #ffc300; }
 
 .side-nav {
   background-color: #2e2e2e !important; }

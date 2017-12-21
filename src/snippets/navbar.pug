@@ -6,10 +6,10 @@ nav#navbar.block-primary
 			i.material-icons menu
 		ul.left.hide-on-med-and-down
 			each item in navbar
-				li: a(href=item.href) #{item.text}
+				li(class= item.text==='Home' ? 'active' : ''): a(href=item.href) #{item.text}
 		ul#side-nav.side-nav
 			each item in navbar
-				li: a(href=item.href) #{item.text}
+				li(class= item.text==='Home' ? 'active' : ''): a(href=item.href) #{item.text}
 
 append scripts
 	script.
