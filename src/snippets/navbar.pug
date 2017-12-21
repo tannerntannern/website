@@ -10,7 +10,3 @@ nav#navbar.block-primary
 		ul#side-nav.side-nav
 			each item in navbar
 				li(class= item.text==='Home' ? 'active' : ''): a(href=item.href) #{item.text}
-
-append scripts
-	script.
-		$(".button-collapse").sideNav();
