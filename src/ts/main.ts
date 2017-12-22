@@ -20,8 +20,8 @@ function setup() {
 	c.canvas.height = h;
 
 	// Global vars
-	let ptDist = 125,
-		pixelsPerPoint = 1500,
+	let ptDist = 130,
+		pixelsPerPoint = 1900,
 		numPointsMax = 1000,
 		numPoints = Math.min(Math.round((w * h) / pixelsPerPoint), numPointsMax),
 		edgeX = w + ptDist,
