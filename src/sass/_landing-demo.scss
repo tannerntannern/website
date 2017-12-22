@@ -21,6 +21,14 @@
   }
 }
 
+@keyframes bounce {
+  0% {transform: translateY(0)}
+  15% {transform: translateY(40px)}
+  30% {transform: translateY(0)}
+  45% {transform: translateY(40px)}
+  60% {transform: translateY(0)}
+}
+
 #scroll-down {
   margin-top: 50px;
   background: transparent !important;
@@ -28,4 +36,8 @@
   i {
 	font-size: 2em;
   }
+
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
