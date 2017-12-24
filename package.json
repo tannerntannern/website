@@ -11,7 +11,8 @@
     "watch-ts": "npm run compile-ts -- -w",
     "serve": "http-server ./dist --silent -c-1",
     "dev": "npm-run-all --parallel watch-pug watch-sass watch-ts serve",
-    "build": "npm-run-all compile-pug compile-sass compile-ts"
+    "build": "npm-run-all compile-pug compile-sass compile-ts",
+    "deploy": ""
   },
   "repository": {
     "type": "git",
