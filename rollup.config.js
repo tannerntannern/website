@@ -8,7 +8,7 @@ export default {
 	input: './src/ts/main.ts',
 	output: {
 		format: 'iife',
-		file: './dist/js/main.js'
+		file: './docs/js/main.js'
 	},
 	plugins: [
 		typescriptPlugin({ typescript: typescript }),
