@@ -1,4 +1,5 @@
 extends ../templates/page
+include ../snippets/under-contruction
 
 block title
 	title Tanner Nielsen - Full-Stack Web Developer
@@ -22,16 +23,19 @@ block content
 		.container
 			#about-me.section.scrollspy
 				.row
-					.col.s12(style="height: 600px;")
-						| Whoah there, howdy partner.  My name is Deputy Danner.
+					.col.s12(style="height: 800px;")
+						h1.center About Me
+						+under-construction()
 			#my-work.section.scrollspy
 				.row
-					.col.s12(style="height: 600px;")
-						| Whoah there, howdy partner.  My name is Deputy Danner.
+					.col.s12(style="height: 800px;")
+						h1.center My Work
+						+under-construction()
 			#contact.section.scrollspy
 				.row
-					.col.s12(style="height: 600px;")
-						| Whoah there, howdy partner.  My name is Deputy Danner.
+					.col.s12(style="height: 800px;")
+						h1.center Contact
+						+under-construction()
 
 append scripts
 	script(src="js/main.js")
@@ -51,7 +55,7 @@ append scripts
 			$('.scrollspy').scrollSpy({
 				scrollOffset: nav.height(),
 				getActiveElement: function(id){
-					return 'nav ul li[data-section="#' + id + '"]';
+					return 'ul li[data-section="#' + id + '"]';
 				}
 			});
 		});

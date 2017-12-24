@@ -3,3 +3,18 @@
 @import 'navbar';
 @import 'landing-demo';
 @import 'primary-blocks';
+
+.under-construction {
+  z-index: -1;
+  margin-top: 100px;
+  padding: 40px 0;
+  transform: rotate(15deg);
+  background: repeating-linear-gradient(-45deg, black, black 20px, yellow 20px, yellow 40px);
+
+  .uc-text {
+	background-color: yellow;
+	color: black;
+	font-size: 3em;
+	font-weight: bolder;
+  }
+}

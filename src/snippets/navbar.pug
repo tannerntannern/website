@@ -5,6 +5,6 @@ nav#navbar.block-primary
 		ul.left.hide-on-med-and-down
 			each item in navbar
 				li(data-section=item.href): a(href=item.href) #{item.text}
-		ul#side-nav.side-nav
-			each item in navbar
-				li(data-section=item.href): a(href=item.href) #{item.text}
+ul#side-nav.side-nav
+	each item in navbar
+		li(data-section=item.href): a(href=item.href) #{item.text}

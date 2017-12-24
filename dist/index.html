@@ -39,29 +39,44 @@
               <li data-section="#my-work"><a href="#my-work">My work</a></li>
               <li data-section="#contact"><a href="#contact">Contact</a></li>
             </ul>
-            <ul class="side-nav" id="side-nav">
-              <li data-section="#top-of-page"><a href="#top-of-page">Home</a></li>
-              <li data-section="#about-me"><a href="#about-me">About me</a></li>
-              <li data-section="#my-work"><a href="#my-work">My work</a></li>
-              <li data-section="#contact"><a href="#contact">Contact</a></li>
-            </ul>
           </div>
         </nav>
+        <ul class="side-nav" id="side-nav">
+          <li data-section="#top-of-page"><a href="#top-of-page">Home</a></li>
+          <li data-section="#about-me"><a href="#about-me">About me</a></li>
+          <li data-section="#my-work"><a href="#my-work">My work</a></li>
+          <li data-section="#contact"><a href="#contact">Contact</a></li>
+        </ul>
       </div>
       <div class="container">
         <div class="section scrollspy" id="about-me">
           <div class="row">
-            <div class="col s12" style="height: 600px;">Whoah there, howdy partner.  My name is Deputy Danner.</div>
+            <div class="col s12" style="height: 800px;">
+              <h1 class="center">About Me</h1>
+              <div class="under-construction center">
+                <div class="uc-text">UNDER CONSTRUCTION</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="section scrollspy" id="my-work">
           <div class="row">
-            <div class="col s12" style="height: 600px;">Whoah there, howdy partner.  My name is Deputy Danner.</div>
+            <div class="col s12" style="height: 800px;">
+              <h1 class="center">My Work</h1>
+              <div class="under-construction center">
+                <div class="uc-text">UNDER CONSTRUCTION</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="section scrollspy" id="contact">
           <div class="row">
-            <div class="col s12" style="height: 600px;">Whoah there, howdy partner.  My name is Deputy Danner.</div>
+            <div class="col s12" style="height: 800px;">
+              <h1 class="center">Contact</h1>
+              <div class="under-construction center">
+                <div class="uc-text">UNDER CONSTRUCTION</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -70,7 +85,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <!-- Init mobile nav-->
-    <script>$(".button-collapse").sideNav();</script>
+    <script>$(".button-collapse").sideNav({ closeOnClick: true });</script>
     <!-- Custom scripts-->
     <script src="js/main.js"></script>
     <script>
@@ -89,7 +104,7 @@
       	$('.scrollspy').scrollSpy({
       		scrollOffset: nav.height(),
       		getActiveElement: function(id){
-      			return 'nav ul li[data-section="#' + id + '"]';
+      			return 'ul li[data-section="#' + id + '"]';
       		}
       	});
       });

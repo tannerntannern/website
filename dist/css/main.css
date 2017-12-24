@@ -4,20 +4,19 @@
 :last-child {
   margin-bottom: 0; }
 
-nav ul li:hover {
+nav ul li:hover, .side-nav li:hover {
   background-color: #3d3d3d !important; }
 
-nav ul li.active {
+nav ul li.active, .side-nav li.active {
   background-color: #484848 !important; }
-  nav ul li.active a {
+  nav ul li.active a, .side-nav li.active a {
     color: #ffc300 !important;
     border-bottom: 2px solid #ffc300; }
 
 .side-nav {
-  z-index: 100 !important;
   background-color: #2e2e2e !important; }
   .side-nav li a {
-    color: #fff6f2 !important; }
+    color: #fff6f2; }
 
 #landing-demo {
   width: 100%;
@@ -82,3 +81,15 @@ html, body {
 
 .block-accent {
   color: #2e2e2e; }
+
+.under-construction {
+  z-index: -1;
+  margin-top: 100px;
+  padding: 40px 0;
+  transform: rotate(15deg);
+  background: repeating-linear-gradient(-45deg, black, black 20px, yellow 20px, yellow 40px); }
+  .under-construction .uc-text {
+    background-color: yellow;
+    color: black;
+    font-size: 3em;
+    font-weight: bolder; }
