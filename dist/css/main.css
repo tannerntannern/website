@@ -48,7 +48,7 @@ nav ul li.active {
     transform: translateY(0); } }
 
 #scroll-down {
-  margin-top: 50px;
+  margin-top: 32px;
   background: transparent !important;
   animation-name: bounce;
   animation-duration: 2s;

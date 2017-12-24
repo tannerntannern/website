@@ -14,6 +14,8 @@
     <!-- Custom CSS-->
   </head>
   <body>
+    <!-- Just a placeholder element for the scrollspy plugin to jump to-->
+    <div class="section scrollspy" id="top-of-page" style="height: 0;"></div>
     <div id="landing-demo">
       <canvas id="canvas"></canvas>
       <div id="landing-demo-center">
@@ -28,22 +30,24 @@
       </div>
     </div>
     <div class="block-primary" id="main">
-      <nav class="block-primary" id="navbar">
-        <div class="nav-wrapper container"><a class="button-collapse" href="#!" data-activates="side-nav"><i class="material-icons">menu</i></a>
-          <ul class="left hide-on-med-and-down">
-            <li data-section="#landing-demo"><a href="#landing-demo">Home</a></li>
-            <li data-section="#about-me"><a href="#about-me">About me</a></li>
-            <li data-section="#my-work"><a href="#my-work">My work</a></li>
-            <li data-section="#contact"><a href="#contact">Contact</a></li>
-          </ul>
-          <ul class="side-nav" id="side-nav">
-            <li data-section="#landing-demo"><a href="#landing-demo">Home</a></li>
-            <li data-section="#about-me"><a href="#about-me">About me</a></li>
-            <li data-section="#my-work"><a href="#my-work">My work</a></li>
-            <li data-section="#contact"><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div id="nav-placeholder">
+        <nav class="block-primary" id="navbar">
+          <div class="nav-wrapper container"><a class="button-collapse" href="#!" data-activates="side-nav"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+              <li data-section="#top-of-page"><a href="#top-of-page">Home</a></li>
+              <li data-section="#about-me"><a href="#about-me">About me</a></li>
+              <li data-section="#my-work"><a href="#my-work">My work</a></li>
+              <li data-section="#contact"><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="side-nav" id="side-nav">
+              <li data-section="#top-of-page"><a href="#top-of-page">Home</a></li>
+              <li data-section="#about-me"><a href="#about-me">About me</a></li>
+              <li data-section="#my-work"><a href="#my-work">My work</a></li>
+              <li data-section="#contact"><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div class="container">
         <div class="section scrollspy" id="about-me">
           <div class="row">
@@ -74,12 +78,16 @@
       	// Init pushpin navbar
       	let container = $('#main'), nav = $('#navbar');
       	nav.pushpin({
-      		top: nav.offset().top,
+      		top: container.offset().top,
       		bottom: container.offset().top + container.outerHeight() - nav.height()
       	});
       
+      	// Size the nav-placeholder to avoid the jumpy pushpin effect
+      	$('#nav-placeholder').css({ height: nav.height() + 'px' });
+      
       	// Init scrollspy
       	$('.scrollspy').scrollSpy({
+      		scrollOffset: nav.height(),
       		getActiveElement: function(id){
       			return 'nav ul li[data-section="#' + id + '"]';
       		}

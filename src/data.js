@@ -1,6 +1,6 @@
 module.exports = {
   navbar: [
-    {text: "Home", href: "#landing-demo"},
+    {text: "Home", href: "#top-of-page"},
     {text: "About me", href: "#about-me"},
     {text: "My work", href: "#my-work"},
     {text: "Contact", href: "#contact"}

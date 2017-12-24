@@ -4,6 +4,8 @@ block title
 	title Tanner Nielsen - Full-Stack Web Developer
 
 block content
+	// Just a placeholder element for the scrollspy plugin to jump to
+	#top-of-page.section.scrollspy(style="height: 0;")
 	#landing-demo
 		canvas#canvas
 		#landing-demo-center
@@ -15,7 +17,8 @@ block content
 				h5 I'm a full-stack web developer.
 			a#scroll-down.btn-floating.btn-large.waves-effect(href="#about-me"): i.material-icons arrow_downward
 	#main.block-primary
-		include ../snippets/navbar
+		#nav-placeholder
+			include ../snippets/navbar
 		.container
 			#about-me.section.scrollspy
 				.row
@@ -37,12 +40,16 @@ append scripts
 			// Init pushpin navbar
 			let container = $('#main'), nav = $('#navbar');
 			nav.pushpin({
-				top: nav.offset().top,
+				top: container.offset().top,
 				bottom: container.offset().top + container.outerHeight() - nav.height()
 			});
 
+			// Size the nav-placeholder to avoid the jumpy pushpin effect
+			$('#nav-placeholder').css({ height: nav.height() + 'px' });
+
 			// Init scrollspy
 			$('.scrollspy').scrollSpy({
+				scrollOffset: nav.height(),
 				getActiveElement: function(id){
 					return 'nav ul li[data-section="#' + id + '"]';
 				}
