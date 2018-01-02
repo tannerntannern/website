@@ -19,6 +19,7 @@ module.exports = {
       "Java": "65",
       "C/C++": "15",
       "Bash": "20",
+      "Python": "50"
     },
     frameworks: {
       "Node.js": "65",
@@ -33,7 +34,8 @@ module.exports = {
   projects: [
 
   ],
-  contacts: [
-
-  ]
+  contacts: {
+    "Email": {"icon": "", "link": ""},
+    "GitHub": {"icon": "", "link": ""}
+  }
 };
