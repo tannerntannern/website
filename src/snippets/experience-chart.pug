@@ -2,5 +2,9 @@ mixin experience-chart(title, data)
 	div
 		h4= title
 		each item, name in data
-			.progress
-				.determinate(style=`width: ${item}%;`)
+			.row.progress-row.valign-wrapper
+				.col.s4.m3.l2
+					.progress-label= name
+				.col.s8.m9.l10.tooltipped
+					.progress
+						.determinate(style=`width: ${item}%;`)

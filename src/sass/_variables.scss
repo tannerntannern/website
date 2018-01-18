@@ -1,5 +1,6 @@
 // Color palette
 $color-primary: #2e2e2e;
+$color-primary-dark: darken($color-primary, 8%);
 $color-secondary: #fff6f2;
 $color-accent: #ffc300;
 $text-primary: $color-secondary;

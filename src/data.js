@@ -26,7 +26,7 @@ module.exports = {
       "Vue.js": "75",
       "Riot.js": "45",
       "jQuery": "70",
-      "Underscore/Lodash": "80",
+      "Lodash": "80",
       "Backbone.js": "30",
       "Laravel": "90"
     }
