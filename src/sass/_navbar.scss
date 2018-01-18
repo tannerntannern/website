@@ -1,5 +1,9 @@
 @import 'variables';
 
+nav, .side-nav {
+  z-index: 100;
+}
+
 nav ul li, .side-nav li {
   &:hover {
     background-color: lighten($color-primary, 6%) !important;
