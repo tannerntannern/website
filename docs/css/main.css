@@ -64,6 +64,9 @@ html, body {
   color: #fff6f2;
   font-family: 'Palanquin', sans-serif; }
 
+a {
+  color: #ffc300; }
+
 .background-primary, .block-primary {
   background-color: #2e2e2e; }
 
@@ -74,7 +77,8 @@ html, body {
   background-color: #ffc300; }
 
 .text-primary, .block-primary {
-  color: #fff6f2; }
+  color: #fff6f2;
+  font-size: 1.3em; }
 
 .text-secondary, .block-secondary {
   color: #2e2e2e; }

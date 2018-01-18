@@ -1,5 +1,6 @@
 extends ../templates/page
 include ../snippets/under-contruction
+include ../snippets/experience-chart
 
 block title
 	title Tanner Nielsen - Full-Stack Web Developer
@@ -23,9 +24,27 @@ block content
 		.container
 			#about-me.section.scrollspy
 				.row
-					.col.s12(style="height: 800px;")
+					.col.s12
 						h1.center About Me
-						+under-construction()
+						.row
+							.col.s12.m6.l5.xl4
+								img.responsive-img.circle(src="img/profile.jpg")
+							.col.s12.m6.l7.xl8
+								| I grew up in the small town of Luck, Wisconsin, where I first discovered programming
+								| in the process of trying to build computer games.  Throughout middle and high school
+								| I taught myself various programming languages, and now I'm working on a B.A. in
+								| Computer Science at #[a(href="http://www.drake.edu") Drake University].
+								br
+								br
+								| When I'm not busy with my studies, I'm working on various coding projects.  Currently,
+								| I'm one of three developers working for #[a(href="https://sportslab360.com") SportsLab360].
+								| When I'm not working on school or coding projects, I like to play music.
+						//.row
+						//	.col.s12.m6.l7.xl8
+						//		+experience-chart("Languages", skills.languages)
+						//		+experience-chart("Frameworks", skills.frameworks)
+						//	.col.s12.m6.l5.xl4
+						//		| Over the years, I've gotten experience in a variety of languages and frameworks.
 			#my-work.section.scrollspy
 				.row
 					.col.s12(style="height: 800px;")

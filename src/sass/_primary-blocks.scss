@@ -6,6 +6,10 @@ html, body {
   font-family: 'Palanquin', sans-serif;
 }
 
+a {
+  color: $color-accent;
+}
+
 .background-primary {
   background-color: $color-primary;
 }
@@ -20,6 +24,7 @@ html, body {
 
 .text-primary {
   color: $text-primary;
+  font-size: 1.3em;
 }
 
 .text-secondary {
