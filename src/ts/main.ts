@@ -1,6 +1,6 @@
 import { Point, Line } from './classes';
 import { MainLoop } from './mainloop';
-import { debounce, distApprox } from './util';
+import { debounce, distApprox2 } from './util';
 declare var $: any, jQuery: any;
 
 // Initialize canvas demo
@@ -94,7 +94,7 @@ function setup() {
 		c.strokeStyle = colors.connectors;
 		for (let ln of lines){
 			let p1 = ln.p1, p2 = ln.p2,
-				lineLengthApprox = distApprox(p1, p2);
+				lineLengthApprox = distApprox2(p1, p2);
 
 			if (lineLengthApprox < ptDist){
 				c.globalAlpha = 1 - (lineLengthApprox / ptDist);

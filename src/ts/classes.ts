@@ -8,7 +8,7 @@ export class Point {
 }
 
 /**
- * Represents a point on a canvas for the landing page.
+ * Represents a line on a canvas for the landing page.
  */
 export class Line {
 	constructor(public p1: Point, public p2: Point){

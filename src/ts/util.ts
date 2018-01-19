@@ -31,3 +31,12 @@ export function distApprox(p1: {x: number, y: number}, p2: {x: number, y: number
 		y = p2.y - p1.y;
 	return 1.426776695*Math.min(0.7071067812*(Math.abs(x)+Math.abs(y)), Math.max (Math.abs(x), Math.abs(y)));
 }
+
+/**
+ * Distance approximation function, based on squares (Manhattan distance).
+ *
+ * For the purposes of determining a minor graphical quality, this is plenty fine.
+ */
+export function distApprox2(p1: {x: number, y: number}, p2: {x: number, y: number}): number {
+	return Math.abs(p2.x - p1.x) + Math.abs(p2.y - p1.y);
+}
