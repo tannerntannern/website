@@ -295,10 +295,17 @@
         </div>
         <div class="section scrollspy" id="my-work">
           <div class="row">
-            <div class="col s12" style="height: 800px;">
+            <div class="col s12">
               <h1 class="center">My Work</h1>
-              <div class="under-construction center">
-                <div class="uc-text">UNDER CONSTRUCTION</div>
+              <div class="carousel carousel-slider center">
+                <div class="carousel-item">
+                  <h2>Yob</h2>
+                  <p>A graphical analysis add-on for Google Docs</p>
+                </div>
+                <div class="carousel-item">
+                  <h2>SportsLab360</h2>
+                  <p>An online program aimed at youth soccer clubs to help increase players tactical abilities</p>
+                </div>
               </div>
             </div>
           </div>
@@ -344,6 +351,12 @@
       		getActiveElement: function(id){
       			return 'ul li[data-section="#' + id + '"]';
       		}
+      	});
+      
+      	// Init projects carousel
+      	$('.carousel.carousel-slider').carousel({
+      		fullWidth: true,
+      		indicators: true
       	});
       });
     </script>

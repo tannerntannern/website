@@ -1,0 +1,6 @@
+mixin projects-carousel(data)
+	.carousel.carousel-slider.center
+		each project in data
+			.carousel-item
+				h2= project.name
+				p= project.shortDescription

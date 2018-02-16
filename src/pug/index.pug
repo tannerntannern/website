@@ -1,6 +1,7 @@
 extends ../templates/page
 include ../snippets/under-contruction
 include ../snippets/experience-chart
+include ../snippets/projects-carousel
 
 block title
 	title Tanner Nielsen - Full-Stack Web Developer
@@ -49,9 +50,9 @@ block content
 								+experience-chart("Frameworks/Libraries", skills.frameworks)
 			#my-work.section.scrollspy
 				.row
-					.col.s12(style="height: 800px;")
+					.col.s12
 						h1.center My Work
-						+under-construction()
+						+projects-carousel(projects)
 			#contact.section.scrollspy
 				.row
 					.col.s12(style="height: 800px;")
@@ -79,5 +80,11 @@ append scripts
 				getActiveElement: function(id){
 					return 'ul li[data-section="#' + id + '"]';
 				}
+			});
+
+			// Init projects carousel
+			$('.carousel.carousel-slider').carousel({
+				fullWidth: true,
+				indicators: true
 			});
 		});

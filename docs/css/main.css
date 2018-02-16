@@ -5,7 +5,7 @@
   margin-bottom: 0; }
 
 nav, .side-nav {
-  z-index: 100; }
+  z-index: 1000; }
 
 nav ul li:hover, .side-nav li:hover {
   background-color: #3d3d3d !important; }
@@ -121,7 +121,7 @@ a {
   font-size: 0.8em;
   font-weight: bolder;
   padding: 0 0.5em;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.18);
   opacity: 0;
   transition: opacity 0.5s; }
 

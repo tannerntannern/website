@@ -32,7 +32,18 @@ module.exports = {
     }
   },
   projects: [
-
+      {
+        "name": "Yob",
+        "timeFrame": "2014 - 2016",
+        "shortDescription": "A graphical analysis add-on for Google Docs",
+        "longDescription": ""
+      },
+      {
+        "name": "SportsLab360",
+        "timeFrame": "2017 - Present",
+        "shortDescription": "An online program aimed at youth soccer clubs to help increase players' tactical abilities",
+        "longDescription": ""
+      }
   ],
   contacts: {
     "Email": {"icon": "", "link": ""},
