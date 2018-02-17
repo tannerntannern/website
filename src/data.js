@@ -32,16 +32,18 @@ module.exports = {
     }
   },
   projects: [
+	  {
+		  "name": "SportsLab360",
+		  "timeFrame": "2017 - Present",
+		  "image" : "/img/projects/sportslab360.png",
+		  "shortDescription": "An online program aimed at youth soccer clubs to help increase players' tactical abilities",
+		  "longDescription": ""
+	  },
       {
         "name": "Yob",
         "timeFrame": "2014 - 2016",
+        "image": "/img/projects/yob.png",
         "shortDescription": "A graphical analysis add-on for Google Docs",
-        "longDescription": ""
-      },
-      {
-        "name": "SportsLab360",
-        "timeFrame": "2017 - Present",
-        "shortDescription": "An online program aimed at youth soccer clubs to help increase players' tactical abilities",
         "longDescription": ""
       }
   ],
