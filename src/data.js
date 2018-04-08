@@ -5,7 +5,6 @@ module.exports = {
     {text: "My work", href: "#my-work"},
     {text: "Contact", href: "#contact"}
   ],
-  availableForHire: false,
   skills: {
     languages: {
       "HTML": "95",
@@ -64,9 +63,10 @@ module.exports = {
         }
       }
   ],
+  availableForHire: "May 2018",
   contacts: {
     "Email": {"text": "tannerntannern@gmail.com", "icon": "fas fa-envelope", "link": "mailto:tannerntannern@gmail.com"},
-    "LinkedIn": {"text": "", "icon": "fab fa-linkedin", "link": ""},
-    "GitHub": {"text": "tannerntannern", "icon": "fab fa-github", "link": ""}
+    "LinkedIn": {"text": "Tanner Nielsen", "icon": "fab fa-linkedin", "link": "https://www.linkedin.com/in/tanner-nielsen-701940137"},
+    "GitHub": {"text": "tannerntannern", "icon": "fab fa-github", "link": "https://github.com/tannerntannern"}
   }
 };

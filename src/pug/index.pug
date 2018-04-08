@@ -55,11 +55,18 @@ block content
 						+projects-carousel(projects)
 			#contact.section.scrollspy
 				.row
-					.col.s12
-						h1.center Contact
-						i.fab.fa-github
-						i.fas.fa-envelope
-						i.fab.fa-linkedin
+					.col.s12.center
+						h1 Contact
+						if availableForHire === false
+							p I'm currently too wrapped up in other projects to take on any more work, but feel free to reach out if you'd like to negotiate.
+						else
+							p I'll be looking for work starting in #{availableForHire}.  Let's get in touch!
+						ul.contact-list
+							each contact, type in contacts
+								li
+									a(href= contact.link)
+										i(class= contact.icon)
+										| &nbsp; #{contact.text}
 		include ../snippets/footer
 
 append scripts
