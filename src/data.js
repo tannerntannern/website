@@ -65,8 +65,8 @@ module.exports = {
       }
   ],
   contacts: {
-    "Email": {"icon": "", "link": ""},
-    "LinkedIn": {"icon": "", "link": ""},
-    "GitHub": {"icon": "", "link": ""}
+    "Email": {"text": "tannerntannern@gmail.com", "icon": "fas fa-envelope", "link": "mailto:tannerntannern@gmail.com"},
+    "LinkedIn": {"text": "", "icon": "fab fa-linkedin", "link": ""},
+    "GitHub": {"text": "tannerntannern", "icon": "fab fa-github", "link": ""}
   }
 };
