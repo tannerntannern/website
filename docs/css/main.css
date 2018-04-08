@@ -125,9 +125,42 @@ a {
   opacity: 0;
   transition: opacity 0.5s; }
 
-.project-pic {
+.project {
   background-size: cover;
-  background-position: center; }
+  background-position-x: center;
+  background-position-y: top; }
+
+.project-description {
+  margin: 0.5em;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1em;
+  float: left;
+  text-align: left; }
+  .project-description .title {
+    font-size: 1.9em;
+    font-weight: bolder; }
+  .project-description .timeframe {
+    font-size: 0.7em;
+    font-style: italic; }
+  .project-description .description {
+    margin-top: 0.25em;
+    font-size: 0.9em;
+    font-weight: bold; }
+  .project-description .links {
+    margin-top: 0.5em;
+    font-size: 0.9em; }
+
+@media only screen and (max-width: 600px) {
+  .project-description {
+    max-width: 100%; } }
+
+@media only screen and (max-width: 992px) {
+  .project-description {
+    max-width: 75%; } }
+
+@media only screen and (min-width: 993px) {
+  .project-description {
+    max-width: 50%; } }
 
 .under-construction {
   z-index: -1;

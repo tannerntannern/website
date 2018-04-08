@@ -1,4 +1,54 @@
-.project-pic {
+@import 'variables';
+
+.project {
   background-size: cover;
-  background-position: center;
+  background-position-x: center;
+  background-position-y: top;
+}
+
+.project-description {
+  margin: 0.5em;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1em;
+  float: left;
+  text-align: left;
+
+  .title {
+    font-size: 1.9em;
+    font-weight: bolder;
+  }
+
+  .timeframe {
+    font-size: 0.7em;
+    font-style: italic;
+  }
+
+  .description {
+    margin-top: 0.25em;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  .links {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+  }
+}
+
+@media #{$small-and-down} {
+  .project-description {
+    max-width: 100%;
+  }
+}
+
+@media #{$medium-and-down} {
+  .project-description {
+    max-width: 75%;
+  }
+}
+
+@media #{$large-and-up} {
+  .project-description {
+    max-width: 50%;
+  }
 }

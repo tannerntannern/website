@@ -1,9 +1,12 @@
 mixin projects-carousel(data)
 	.carousel.carousel-slider.center
-		.carousel-fixed-item.center
-			a.btn.waves-effect.white.grey-text.darken-text-2 See More
 		each project in data
-			.carousel-item.project-pic(style="background-image: url('" + project.image + "');")
-				div(style="background-color: rgba(0, 0, 0, 0.5); padding: 0.5em; font-weight: bold;")
-					p(style="font-size: 1.8em; margin: 0;")= project.name
-					p= project.shortDescription
+			.carousel-item.project(style="background-image: url('" + project.image + "');")
+				.project-description
+					.title= project.name
+					.timeframe= project.timeFrame
+					.description= project.shortDescription
+					.links
+						each link, name in project.links
+							a(href= link)= name
+							br
