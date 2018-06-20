@@ -125,17 +125,11 @@ a {
   opacity: 0;
   transition: opacity 0.5s; }
 
-.project {
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: top; }
+.project-image {
+  width: 100%; }
 
 .project-description {
-  margin: 0.5em;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1em;
-  float: left;
-  text-align: left; }
+  padding: 1em; }
   .project-description .title {
     font-size: 1.9em;
     font-weight: bolder; }
@@ -150,20 +144,11 @@ a {
     margin-top: 0.5em;
     font-size: 0.9em; }
 
-@media only screen and (max-width: 600px) {
-  .project-description {
-    max-width: 100%; } }
-
-@media only screen and (max-width: 992px) {
-  .project-description {
-    max-width: 75%; } }
-
-@media only screen and (min-width: 993px) {
-  .project-description {
-    max-width: 50%; } }
-
 .contact-list i {
   font-size: 1.5em; }
+
+h1, h2, h3 {
+  font-weight: bolder; }
 
 .under-construction {
   z-index: -1;

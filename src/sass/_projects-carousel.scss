@@ -1,17 +1,11 @@
 @import 'variables';
 
-.project {
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: top;
+.project-image {
+  width: 100%;
 }
 
 .project-description {
-  margin: 0.5em;
-  background-color: rgba(0, 0, 0, 0.7);
   padding: 1em;
-  float: left;
-  text-align: left;
 
   .title {
     font-size: 1.9em;
@@ -32,23 +26,5 @@
   .links {
     margin-top: 0.5em;
     font-size: 0.9em;
-  }
-}
-
-@media #{$small-and-down} {
-  .project-description {
-    max-width: 100%;
-  }
-}
-
-@media #{$medium-and-down} {
-  .project-description {
-    max-width: 75%;
-  }
-}
-
-@media #{$large-and-up} {
-  .project-description {
-    max-width: 50%;
   }
 }

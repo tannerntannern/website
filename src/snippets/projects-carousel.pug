@@ -1,8 +1,8 @@
 mixin projects-carousel(data)
-	.carousel.carousel-slider.center
-		each project in data
-			.carousel-item.project(style="background-image: url('" + project.image + "');")
-				.project-description
+	each project, index in data
+		.row
+			.col.s12.m6.l5
+				.block-secondary.project-description
 					.title= project.name
 					.timeframe= project.timeFrame
 					.description= project.shortDescription
@@ -10,3 +10,5 @@ mixin projects-carousel(data)
 						each link, name in project.links
 							a(href= link)= name
 							br
+			.col.s12.m6.l7
+				img.project-image.materialboxed(src= project.image)
