@@ -63,7 +63,7 @@ module.exports = {
         }
       }
   ],
-  availableForHire: "May 2018",
+  availableForHire: "the Fall of 2018",
   contacts: {
     "Email": {"text": "tannerntannern@gmail.com", "icon": "fas fa-envelope", "link": "mailto:tannerntannern@gmail.com"},
     "LinkedIn": {"text": "Tanner Nielsen", "icon": "fab fa-linkedin", "link": "https://www.linkedin.com/in/tanner-nielsen-701940137"},
