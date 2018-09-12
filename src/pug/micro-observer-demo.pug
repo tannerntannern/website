@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		title Micro Observer Demo
+	body
+		h1 micro-observer demo
+		p Open up the console and try making some changes to `data`.
+		div(style='display: flex; flex-basis: 40%;')
+			div(style='flex-grow: 1;')
+				h3 Current State:
+				pre#current-state
+			div(style='flex-grow: 1; flex-basis: 40%;')
+				h3 Last Change
+				pre#last-change
+		script let exports = window;
+		script(type="text/javascript" src='https://rawgit.com/tannerntannern/micro-observer/master/dist/observer.js')
+		script.
+			let recentChange;
+			let __data = {
+				array: [1, 2, 3],
+				string: 'Hello there',
+				nested: {
+					array: ['a', 'b', 'c'],
+					person: {
+						name: 'Bob', age: '54'
+					}
+				}
+			};
+			function render() {
+				document.querySelector('#current-state').innerHTML = JSON.stringify(__data, null, 4);
+				document.querySelector('#last-change').innerHTML = JSON.stringify(recentChange, null, 4);
+			}
+			let data = Observer.create(__data, function(change) {
+				recentChange = change;
+				setTimeout(render, 50);
+				return true;
+			});
+			render();
