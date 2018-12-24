@@ -118,4 +118,21 @@ function setup() {
 // Setup once at the beginning
 setup();
 
-$(window).on('resize', debounce(setup, 200));
+$(window)
+	.on('resize', debounce(setup, 200))
+	.on("blur focus", function(e) {
+		let prevType = $(this).data("prevType");
+
+		if (prevType != e.type) {
+			switch (e.type) {
+				case "blur":
+					MainLoop.stop();
+					break;
+				case "focus":
+					MainLoop.start();
+					break;
+			}
+		}
+
+		$(this).data("prevType", e.type);
+	});
