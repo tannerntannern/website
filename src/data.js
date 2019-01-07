@@ -34,7 +34,7 @@ module.exports = {
 	  {
 		  "name": "SportsLab360",
 		  "timeFrame": "2017 - Present",
-		  "image" : "/img/projects/sportslab360.png",
+		  "image" : "./img/projects/sportslab360.png",
 		  "shortDescription": "An online program aimed at youth soccer clubs to help refine players' tactical abilities.",
 		  "longDescription": "",
           "links": {
@@ -44,7 +44,7 @@ module.exports = {
       {
           "name": "Abrahamson Website",
           "timeFrame": "Jan 2018 - Mar 2018",
-          "image": "/img/projects/abrahamson.png",
+          "image": "./img/projects/abrahamson.png",
 		  "shortDescription": "A custom business website complete with a user content management system.",
 		  "longDescription": "",
           "links": {
@@ -54,7 +54,7 @@ module.exports = {
       {
         "name": "Yob - Graph Editor",
         "timeFrame": "2014 - 2016",
-        "image": "/img/projects/yob.png",
+        "image": "./img/projects/yob.png",
         "shortDescription": "A simple and streamlined graphical analysis add-on for Google Docs.",
         "longDescription": "",
         "links": {
@@ -63,7 +63,7 @@ module.exports = {
         }
       }
   ],
-  availableForHire: "the Spring of 2018",
+  availableForHire: "2019",
   contacts: {
     "Email": {"text": "tannerntannern@gmail.com", "icon": "fas fa-envelope", "link": "mailto:tannerntannern@gmail.com"},
     "LinkedIn": {"text": "Tanner Nielsen", "icon": "fab fa-linkedin", "link": "https://www.linkedin.com/in/tanner-nielsen-701940137"},
