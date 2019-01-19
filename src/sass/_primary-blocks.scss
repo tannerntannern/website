@@ -10,18 +10,6 @@ a {
   color: $color-accent;
 }
 
-.background-primary {
-  background-color: $color-primary;
-}
-
-.background-secondary {
-  background: $color-secondary;
-}
-
-.background-accent {
-  background-color: $color-accent;
-}
-
 .text-primary {
   color: $text-primary;
   font-size: 1.3em;
@@ -34,19 +22,4 @@ a {
 .text-accent {
   font-weight: bold;
   color: $color-accent !important;
-}
-
-.block-primary {
-  @extend .background-primary;
-  @extend .text-primary;
-}
-
-.block-secondary {
-  @extend .background-secondary;
-  @extend .text-secondary;
-}
-
-.block-accent {
-  @extend .background-accent;
-  color: $text-secondary;
 }
