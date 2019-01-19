@@ -27,5 +27,15 @@ type Project = {
 	category: Category,
 	technologies: Technology[],
 	timeline: Timeline,
-	openSource: boolean
+	openSource: boolean,
+	title: string,
+	description: string,
+	links: {
+		website?: string,
+		demo?: string,
+		source?: string,
+		install?: string,
+		download?: string,
+		blogPost?: string
+	}
 }
