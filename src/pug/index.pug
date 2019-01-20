@@ -5,11 +5,7 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
-		// Materialize
-		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
-		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css")
-
-		// Extra icons...
+		// Font Awesome
 		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous")
 
 		// Palanquin Font
@@ -18,14 +14,16 @@ html(lang="en")
 		// Main CSS
 		link(rel="stylesheet" href="../sass/main.scss")
 	body
-		#landing-demo
-			canvas#canvas
-			#landing-demo-center
-				h2 Hi, I'm #[span.text-accent Tanner Nielsen].
-				h5 I'm a full-stack web developer.
+		canvas#canvas
+		#center-text
+			h1 Hi, I'm #[span.text-accent Tanner Nielsen].
+			h3 I'm a full-stack web developer.
+			.links
+				a.icon.fab.fa-linkedin(title="LinkedIn" href="https://www.linkedin.com/in/tanner-a-nielsen/")
+				a.icon.fab.fa-github-alt(title="GitHub" href="https://github.com/tannerntannern")
+				a.icon.fas.fa-at(title="Email" href="mailto:tannerntannern@gmail.com")
+				a.bold(href="https://portfolio.tannernielsen.com") Portfolio
+				a.bold(href="https://blog.tannernielsen.com") Blog
 
-		// Materialize scripts
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js")
-
 		script(src="../ts/main.ts")

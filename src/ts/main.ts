@@ -34,7 +34,7 @@ function setup() {
 		background1: '#1e1e3c',
 		background2: '#1c3f4a',
 		points: '#ffe699',
-		connectors: '#f8ffbe'
+		connectors: '#d8dfa6'
 	};
 
 	// Init Points
@@ -87,7 +87,7 @@ function setup() {
 		// Render points
 		c.fillStyle = colors.points;
 		for (let pt of points){
-			c.fillRect(pt.x, pt.y, 2, 2);
+			c.fillRect(pt.x - 1 , pt.y - 1, 3, 3);
 		}
 
 		// Render point connectors

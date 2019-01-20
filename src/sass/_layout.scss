@@ -1,0 +1,8 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+// Margin fix
+:first-child { margin-top: 0; }
+:last-child { margin-bottom: 0; }

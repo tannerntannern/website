@@ -1,0 +1,57 @@
+@import 'variables';
+
+html, body {
+  color: $text-primary;
+  font-family: 'Palanquin', sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: bolder;
+  line-height: 1.1;
+  margin: .25em 0;
+}
+
+h1 { font-size: 3.3em; }
+h2 { font-size: 2.8em; }
+h3 { font-size: 2.1em; }
+
+a {
+  transition: color .4s;
+  color: $text-primary;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-primary {
+  color: $text-primary;
+  font-size: 1.3em;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-accent {
+  font-weight: bold;
+  color: $color-accent !important;
+}
+
+.links {
+  margin: 1.3em 0;
+  font-size: 1.5em;
+
+  a {
+    margin: 0 0.2em;
+
+    &.icon {
+      font-size: 1.7em;
+      text-decoration: none;
+    }
+  }
+}

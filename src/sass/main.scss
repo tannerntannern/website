@@ -1,8 +1,20 @@
 @import 'variables';
-@import 'margin-fix';
-@import 'landing-demo';
-@import 'primary-blocks';
+@import 'layout';
+@import 'typography';
 
-h1, h2, h3 {
-  font-weight: bolder;
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#center-text {
+  z-index: 100;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
