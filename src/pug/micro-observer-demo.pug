@@ -13,7 +13,7 @@ html(lang='en')
 			div(style='flex-grow: 1; flex-basis: 40%;')
 				h3 Last Change
 				pre#last-change
-		script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/micro-observer/dist/observer.js')
+		script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/micro-observer@latest/dist/observer.js')
 		script.
 			let recentChange;
 			let __data = {
@@ -30,7 +30,7 @@ html(lang='en')
 				document.querySelector('#current-state').innerHTML = JSON.stringify(__data, null, 4);
 				document.querySelector('#last-change').innerHTML = JSON.stringify(recentChange, null, 4);
 			}
-			let data = Observer.create(__data, function(change) {
+			window.data = Observer.create(__data, function(change) {
 				recentChange = change;
 				setTimeout(render, 50);
 				return true;
