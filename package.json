@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-website",
+  "name": "website",
   "version": "1.0.0",
   "description": "My personal website.",
   "scripts": {
@@ -18,9 +18,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://tannerntannern@bitbucket.org/tannerntannern/portfolio-website.git"
+    "url": "git+https://tannerntannern@bitbucket.org/tannerntannern/website.git"
   },
-  "homepage": "https://bitbucket.org/tannerntannern/portfolio-website#readme",
+  "homepage": "https://tannernielsen.com",
   "author": "Tanner Nielsen",
   "license": "ISC"
 }
