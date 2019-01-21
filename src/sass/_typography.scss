@@ -11,9 +11,9 @@ h1, h2, h3 {
   margin: .25em 0;
 }
 
-h1 { font-size: 3.3em; }
-h2 { font-size: 2.8em; }
-h3 { font-size: 2.1em; }
+h1 { font-size: 3.25em; }
+h2 { font-size: 2.75em; }
+h3 { font-size: 2.0em; }
 
 a {
   transition: color .4s;
@@ -43,14 +43,14 @@ a {
 }
 
 .links {
-  margin: 1.3em 0;
+  margin: 0.8em 0;
   font-size: 1.5em;
 
   a {
     margin: 0 0.2em;
 
     &.icon {
-      font-size: 1.7em;
+      font-size: 1.5em;
       text-decoration: none;
     }
   }
