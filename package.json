@@ -1,6 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
+  "private": true,
   "description": "My personal website.",
   "scripts": {
     "clean": "rm docs/*.html docs/*.css docs/*.js && rm -rf docs/__",
