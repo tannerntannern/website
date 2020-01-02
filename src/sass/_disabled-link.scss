@@ -1,0 +1,23 @@
+@import 'variables';
+
+a.disabled {
+  position: relative;
+  color: #aaaaaa !important;
+
+  &::before {
+	content: "Coming soon";
+	position: absolute;
+	transform: rotate(-10deg);
+	top: 80%;
+	width: 74px;
+	font-size: 9pt;
+	height: 12pt;
+	line-height: 9pt;
+
+	border-radius: 4px;
+	border: 1px solid white;
+	background-color: $color-primary;
+	color: $color-accent;
+	text-shadow: unset;
+  }
+}
