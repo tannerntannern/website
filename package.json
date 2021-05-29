@@ -7,7 +7,7 @@
     "clean": "rm docs/*.html docs/*.css docs/*.js && rm -rf docs/__",
     "watch": "parcel watch src/pug/*.pug --public-url . -d docs --no-source-maps --no-hmr",
     "build": "parcel build src/pug/*.pug --public-url . -d docs --no-source-maps",
-    "build-clean": "yarn clean && yarn build && git add docs"
+    "build-clean": "yarn build && git add docs"
   },
   "dependencies": {},
   "devDependencies": {
