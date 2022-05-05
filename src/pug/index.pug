@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
 	head
-		title Tanner Nielsen - Full-Stack Web Developer
+		title Tanner Nielsen - Software Engineer
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
@@ -16,9 +16,8 @@ html(lang="en")
 			h1 Hi, I'm #[span.text-accent Tanner Nielsen].
 			h3 I'm a software engineer and amateur composer.
 			.links
-				a.bold(href="../docs/Resume.pdf") Resume
+				a.bold.disabled.construction(href="javascript:void(0)") Resume
 				a.bold(href="https://blog.tannernielsen.com") Blog
-				a.bold.disabled(href="javascript:void(0)") Portfolio
 				a.bold.disabled(href="javascript:void(0)") Music
 			.links
 				a.icon.fab.fa-linkedin(title="LinkedIn" href="https://www.linkedin.com/in/tanner-a-nielsen/")
@@ -26,4 +25,4 @@ html(lang="en")
 				a.icon.fas.fa-at(title="Email" href="mailto:tannerntannern@gmail.com")
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-		script(src="../ts/main.ts")
+		script(type="module" src="../ts/main.ts")

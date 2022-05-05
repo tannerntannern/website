@@ -2,20 +2,23 @@
   "name": "website",
   "version": "1.0.0",
   "private": true,
-  "description": "My personal website.",
   "scripts": {
-    "clean": "rm docs/*.html docs/*.css docs/*.js && rm -rf docs/__",
-    "watch": "parcel watch src/pug/*.pug --public-url . -d docs --no-source-maps --no-hmr",
-    "build": "parcel build src/pug/*.pug --public-url . -d docs --no-source-maps",
-    "build-clean": "yarn build && git add docs"
+    "clean": "rimraf docs/*.html docs/*.css docs/*.js docs/up_",
+    "dev": "parcel watch src/pug/*.pug --public-url . --dist-dir docs --no-source-maps --no-hmr",
+    "build:parcel": "parcel build src/pug/*.pug --public-url . --dist-dir docs --no-source-maps",
+    "build": "yarn clean && yarn build:parcel && git add docs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gutenberg-css": "^0.6.1"
+  },
   "devDependencies": {
-    "husky": "^1.3.1",
-    "parcel-bundler": "^1.11.0",
-    "pug": "^2.0.3",
-    "sass": "^1.16.1",
-    "typescript": "^3.2.4"
+    "@parcel/transformer-pug": "2.5.0",
+    "@parcel/transformer-sass": "2.5.0",
+    "parcel": "^2.5.0",
+    "pug": "^3.0.2",
+    "rimraf": "^3.0.2",
+    "sass": "^1.51.0",
+    "typescript": "^4.6.4"
   },
   "repository": {
     "type": "git",

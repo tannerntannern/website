@@ -4,6 +4,10 @@ a.disabled {
   position: relative;
   color: #aaaaaa !important;
 
+  &.construction::before {
+	content: "Construction";
+  }
+
   &::before {
 	content: "Coming soon";
 	position: absolute;
