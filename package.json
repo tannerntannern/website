@@ -6,14 +6,14 @@
     "clean": "rimraf docs/*.html docs/*.css docs/*.js docs/up_",
     "dev": "parcel watch src/pug/*.pug --public-url . --dist-dir docs --no-source-maps --no-hmr",
     "build:parcel": "parcel build src/pug/*.pug --public-url . --dist-dir docs --no-source-maps",
-    "build": "yarn clean && yarn build:parcel && git add docs"
+    "build": "npm run clean && npm run build:parcel && git add docs"
   },
   "dependencies": {
     "gutenberg-css": "^0.6.1"
   },
   "devDependencies": {
-    "@parcel/transformer-pug": "2.5.0",
-    "@parcel/transformer-sass": "2.5.0",
+    "@parcel/transformer-pug": "2.13.3",
+    "@parcel/transformer-sass": "2.13.3",
     "parcel": "^2.5.0",
     "pug": "^3.0.2",
     "rimraf": "^3.0.2",
