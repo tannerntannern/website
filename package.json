@@ -5,8 +5,9 @@
   "scripts": {
     "clean": "rimraf docs/*.html docs/*.css docs/*.js docs/up_",
     "dev": "parcel watch src/pug/*.pug --public-url . --dist-dir docs --no-source-maps --no-hmr",
+    "build:resume": "typst compile ../resume/resume.typ ./src/docs/resume.pdf",
     "build:parcel": "parcel build src/pug/*.pug --public-url . --dist-dir docs --no-source-maps",
-    "build": "npm run clean && npm run build:parcel && git add docs"
+    "build": "npm run clean && npm run build:resume && npm run build:parcel && git add docs"
   },
   "dependencies": {
     "gutenberg-css": "^0.6.1"
